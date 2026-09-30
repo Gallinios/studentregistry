@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Αρχική";
+    var count = studentregistry.Services.StudentStore.GetAll().Count;
+}
+
+<div class="text-center py-5">
+    <h1 class="display-4">Student Registry</h1>
+    <p class="lead text-muted">Καταχώρηση και προβολή μαθητών με ASP.NET Core MVC.</p>
+    <p>Εγγεγραμμένοι μαθητές: <strong>@count</strong></p>
+    <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
+        <a class="btn btn-primary" asp-controller="Students" asp-action="Index">Προβολή μαθητών</a>
+        <a class="btn btn-outline-secondary" asp-controller="Students" asp-action="Create">Νέος μαθητής</a>
+    </div>
+</div>

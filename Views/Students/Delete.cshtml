@@ -1,0 +1,22 @@
+@model Student
+@{
+    ViewData["Title"] = "Διαγραφή μαθητή";
+}
+
+<h1 class="h2 mb-4">Διαγραφή μαθητή</h1>
+
+<div class="alert alert-warning">Θέλετε σίγουρα να διαγράψετε αυτόν τον μαθητή;</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Ονοματεπώνυμο</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+    <dt class="col-sm-3">Ηλικία</dt>
+    <dd class="col-sm-9">@Model.Age</dd>
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-flex gap-2">
+    <button type="submit" class="btn btn-danger">Διαγραφή</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Άκυρο</a>
+</form>

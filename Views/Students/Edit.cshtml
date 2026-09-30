@@ -1,0 +1,23 @@
+@model Student
+@{
+    ViewData["Title"] = "Επεξεργασία μαθητή";
+}
+
+<h1 class="h2 mb-4">Επεξεργασία μαθητή</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+            <input type="hidden" asp-for="Id" />
+            <partial name="_StudentForm" model="Model" />
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Αποθήκευση</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Άκυρο</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
